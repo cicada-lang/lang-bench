@@ -1,0 +1,17 @@
+# vscode
+.vscode
+
+# test
+tmp
+
+# c
+*.o
+
+# build
+bin
+lib
+
+# emacs
+*~
+*#*
+.#*
