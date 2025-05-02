@@ -1,2 +1,0 @@
-nat/bun
-nat/deno
