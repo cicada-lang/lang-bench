@@ -1,7 +1,6 @@
 (define (zero) '())
 (define (add1 prev) (cons prev '()))
 (define (zero? target) (null? target))
-(define (add1? target) (cons? target))
 (define (prev target) (car target))
 
 (define (two) (add1 (add1 (zero))))
