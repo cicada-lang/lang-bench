@@ -6,6 +6,10 @@ class Add1 {
   constructor(prev) { this.prev = prev }
 }
 
+function iszero(target) {
+  return target instanceof Zero
+}
+
 function zero() {
   return new Zero()
 }
@@ -19,16 +23,16 @@ function two() {
 }
 
 function add(target, addend) {
-  if (target instanceof Zero)
+  if (iszero(target))
     return addend
-  else if (target instanceof Add1)
+  else
     return add1(add(target.prev, addend))
 }
 
 function mul(target, mulend) {
-  if (target instanceof Zero)
+  if (iszero(target))
     return zero()
-  else if (target instanceof Add1)
+  else
     return add(mul(target.prev, mulend), mulend)
 }
 

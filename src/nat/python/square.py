@@ -1,9 +1,15 @@
 class Zero:
     pass
 
+
 class Add1:
     def __init__(self, prev):
         self.prev = prev
+
+
+def iszero(target):
+    return isinstance(target, Zero)
+
 
 def zero():
     return Zero()
@@ -18,16 +24,16 @@ def two():
 
 
 def add(target, addend):
-    if (isinstance(target, Zero)):
+    if (iszero(target)):
         return addend
-    elif (isinstance(target, Add1)):
+    else:
         return add1(add(target.prev, addend))
 
 
 def mul(target, mulend):
-    if (isinstance(target, Zero)):
+    if (iszero(target)):
         return zero()
-    elif (isinstance(target, Add1)):
+    else:
         return add(mul(target.prev, mulend), mulend)
 
 def square(x):
